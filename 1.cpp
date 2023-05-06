@@ -2,11 +2,11 @@
 using namespace std;
 class RBI{
     public:
-    float rbi_rate = 0.02;
+    float rbi_rate = 0.09;
 };
 class SBI :public RBI{
     public:
-    float sbi_rate = 0.03;
+    float sbi_rate = 0.02; 
     float c;
     void getROI(float b){
         c = (b*rbi_rate) + (b*sbi_rate) + b;
@@ -17,7 +17,7 @@ class SBI :public RBI{
 };
 class BOB :public RBI{
     public:
-    float bob_rate = 0.05;
+    float bob_rate = 0.01;
     float c;
     void getROI(float b){
         c = (b*rbi_rate) + (b*bob_rate) + b;
@@ -28,7 +28,7 @@ class BOB :public RBI{
 };
 class ICICI :public RBI{
     public:
-    float icici_rate = 0.07;
+    float icici_rate = 0.03;
     float c;
     void getROI(float b){
         c = (b*rbi_rate) + (b*icici_rate) + b;
@@ -50,3 +50,67 @@ int main (){
     obj3.getROI(a);
     return 0;
 }
+// Way 2
+// #include<iostream>
+// using namespace std;
+// class RBI{
+//     public:
+//     float RBI_interest = 0.02;
+// };
+
+
+// class SBI :public RBI{
+//     public:
+//     float SBI_interest = 0.03;
+//     float final_amt;
+//     void getROI(float b_access){
+//         final_amt = ( b_access * RBI_interest ) + ( b_access * SBI_interest) + b_access;
+//         cout<<"RBI interest rate::: "<<RBI_interest<<endl;
+//         cout<<"SBI interest rate::: "<<SBI_interest<<endl;
+//         cout<<"Final amount [RBI + SBI]::: "<<final_amt<<endl;
+//     }
+// };
+
+
+// class BOB :public RBI{
+//     public:
+//     float BOB_interest = 0.05;
+//     float final_amt;
+//     void getROI(float b_access){
+//         final_amt = ( b_access * RBI_interest ) + ( b_access * BOB_interest ) + b_access;
+//         cout<<"RBI interest rate::: "<<RBI_interest<<endl;
+//         cout<<"BOB interest rate::: "<<BOB_interest<<endl;
+//         cout<<"Final amount [RBI + BOB]:::"<<final_amt<<endl;
+//     }
+// };
+
+
+// class ICICI :public RBI{
+//     public:
+//     float ICICI_interest = 0.07;
+//     float final_amt;
+//     void getROI(float b_access){
+//         final_amt = ( b_access * RBI_interest ) + ( b_access * ICICI_interest ) + b_access;
+//         cout<<"RBI interest rate::: "<<RBI_interest<<endl;
+//         cout<<"ICICI interest rate::: "<<ICICI_interest<<endl;
+//         cout<<"Final amount [RBI + ICICI]:::"<<final_amt<<endl;
+//     }
+// };
+
+
+// int main (){
+//     int inputamount;
+
+//     cout<<"Enter amount for which you're willng to find ROI:";
+//     cin>>inputamount;
+
+//     SBI sbiobj;
+//     BOB bobobj;
+//     ICICI iciciobj;
+    
+//     sbiobj.getROI(inputamount);
+//     bobobj.getROI(inputamount);
+//     iciciobj.getROI(inputamount);
+    
+//     return 0;
+// }
